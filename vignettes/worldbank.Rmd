@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r, out.width="50%"}
-knitr::include_graphics(path = "../man/img/logo_world_bank.png")
+knitr::include_graphics(path = "../man/figures/logo_world_bank.png")
 ```
 
 ## Compte utilisateur

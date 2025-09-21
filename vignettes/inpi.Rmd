@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r, out.width="50%"}
-knitr::include_graphics(path = "../man/img/logo_inpi.png")
+knitr::include_graphics(path = "../man/figures/logo_inpi.png")
 ```
 
 ## Compte utilisateur

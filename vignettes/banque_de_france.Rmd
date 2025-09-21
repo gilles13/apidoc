@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r, out.width="30%"}
-knitr::include_graphics(path = "../man/img/logo_banque_de_france_2022.png")
+knitr::include_graphics(path = "../man/figures/logo_banque_de_france_2022.png")
 ```
 
 ## Compte utilisateur

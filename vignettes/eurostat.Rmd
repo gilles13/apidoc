@@ -17,8 +17,8 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r, out.width="50%"}
-knitr::include_graphics(path = "../man/img/logo_eurostat.png")
+```{r, out.width="30%"}
+knitr::include_graphics(path = "../man/figures/logo_eurostat.png")
 ```
 
 ## Compte utilisateur

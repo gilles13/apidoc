@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r, out.width="50%"}
-knitr::include_graphics(path = "../man/img/logo_insee_2025.png")
+knitr::include_graphics(path = "../man/figures/logo_insee_2025.png")
 ```
 
 ## Compte utilisateur

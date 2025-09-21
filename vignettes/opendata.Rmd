@@ -2,7 +2,7 @@
 title: "Open data"
 output: 
   flexdashboard::flex_dashboard:
-    logo: "../man/img/logo_apidoc_resize.png"
+    logo: "../man/figures/logo_apidoc_resize.png"
     orientation: rows
     theme:
       bootswatch: pulse

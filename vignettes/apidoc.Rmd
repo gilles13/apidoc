@@ -1,8 +1,8 @@
 ---
-title: "introduction"
+title: "apidoc"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{introduction}
+  %\VignetteIndexEntry{apidoc}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -17,9 +17,9 @@ knitr::opts_chunk$set(
 ```
 
 ```{r, out.width="50%"}
-knitr::include_graphics(path = "../man/img/logo_apidoc_center.png")
+knitr::include_graphics(path = "../man/figures/logo_apidoc_center.png")
 ```
 
-*Package* documentaire
+Le *package* `apidoc` documente l'accès aux API de certains producteurs de données.
 
-Voir les vignettes
+Voir les infos dans les vignettes ou la rubrique `Articles`
