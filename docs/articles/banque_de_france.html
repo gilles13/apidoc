@@ -85,7 +85,12 @@
 
 
 
-      </header><div class="row">
+      </header><link href="banque_de_france_files/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="banque_de_france_files/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="banque_de_france_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="banque_de_france_files/datatables-binding-0.33/datatables.js"></script><link href="banque_de_france_files/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="banque_de_france_files/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="banque_de_france_files/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="banque_de_france_files/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="banque_de_france_files/crosstalk-1.2.1/js/crosstalk.min.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>banque_de_france</h1>
@@ -102,14 +107,120 @@
 <div class="section level2">
 <h2 id="compte-utilisateur">Compte utilisateur<a class="anchor" aria-label="anchor" href="#compte-utilisateur"></a>
 </h2>
-<p>Avant d’utiliser de requêter l’API Banque de France, vous devez créer
-un compte <a href="https://webstat.banque-france.fr/fr/pages/guide-migration-api/" target="_blank" class="external-link">webstat</a></p>
+<p>Avant de requêter l’API Banque de France, vous devez créer un compte
+<a href="https://webstat.banque-france.fr/fr/pages/guide-migration-api/" target="_blank" class="external-link">webstat</a></p>
+</div>
+<div class="section level2">
+<h2 id="paramétrage">Paramétrage<a class="anchor" aria-label="anchor" href="#param%C3%A9trage"></a>
+</h2>
+<p>Afin d’utiliser le <em>package</em> <code>apimisc</code>, il faut
+configurer une variable d’environnement <code>WEBSTAT_APIKEY</code> avec
+la valeur du jeton configuré sur Webstat.</p>
 </div>
 <div class="section level2">
 <h2 id="package-r">
-<em>Package</em> <code>R</code><a class="anchor" aria-label="anchor" href="#package-r"></a>
+<em>Package</em> R<a class="anchor" aria-label="anchor" href="#package-r"></a>
 </h2>
-<p>TODO</p>
+<p>Le <em>package</em> <code>apimisc</code> contient 3 fonctions pour
+utiliser l’API BDF :</p>
+<ul>
+<li><p>bdf_get_catalog() pour lister les catalogues disponibles sur
+l’API ;</p></li>
+<li><p>bdf_list_datasets() pour lister les datasets ;</p></li>
+<li><p>bdf_get_serie() pour récupérer une série.</p></li>
+</ul>
+</div>
+<div class="section level2">
+<h2 id="exemples">Exemples<a class="anchor" aria-label="anchor" href="#exemples"></a>
+</h2>
+<div class="section level3">
+<h3 id="lister-les-catalogues-de-données">Lister les catalogues de données<a class="anchor" aria-label="anchor" href="#lister-les-catalogues-de-donn%C3%A9es"></a>
+</h3>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st">"apimisc"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">bdfcat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/apimisc/man/bdf_get_catalog.html" class="external-link">bdf_get_catalog</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">bdfcat</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">janitor</span><span class="fu">::</span><span class="fu"><a href="https://sfirke.github.io/janitor/reference/clean_names.html" class="external-link">clean_names</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="fu">tidyselect</span><span class="fu">::</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/all_of.html" class="external-link">any_of</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>            <span class="st">"dataset_id"</span>,</span>
+<span>            <span class="st">"model_id"</span>,</span>
+<span>            <span class="st">"description_fr"</span>,</span>
+<span>            <span class="st">"series_count"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">DT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/DT/man/datatable.html" class="external-link">datatable</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-ac96cb3ee4656e2e9ec3" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ac96cb3ee4656e2e9ec3">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41"],["ACPR","AME","BLS","BPM6","BSI","BSI1","CER","CFTDC","CNF","CNFSI","CONJ","CONJ2","CONS","DET","DIREN","DSE","DWA1","ECOFI","ESTR","EXR","FATSO","FM","FTID","ICB","ICP","IFI","IVF1","MIR","MIR1","OFC","PEA","PME","QFAGG","RA_T","RPP","SA","SAFE","SC1","SI_AI","STS","TCN3"],["ACPR_RC","BDF_AME1","BDF_BLS1","BOP","BDF_BSI1","BDF_BSI1","BDF_EPREG","BDF_CEFIT","NA_SEC","NA_SEC","BDF_ENQCNJ","BDF_ENQCNJ","BDF_SDT","BDF_DET1","BDF_DIREN2","BOP","BDF_DWA1","ECOFIN_DSD","BDF_EST1","BDF_EXR1","FATS","BDF_FMD2","FDI","BDF_ICPF1","BDF_ICP1","BDF_IFI","BDF_IVF1","BDF_MIR1","BDF_MIR1","NA_SEC","BDF_PEA","BDF_DIREN","NA_SEC","BOP","BDF_RPP1","NA_SEC","BDF_SAFE","BDF_SEC1","BDF_ENQCNJ","BDF_STS1","BDF_TCN3"],["Données sur le secteur bancaire et d'assurance en France. Analyse synthétique du marché français des banques et assurances (population, activité et structure financières).","Données macroéconomiques concernant la zone euro.","Enquête sur les conditions de prêt bancaire.","Statistiques de la balance des paiements selon le 6ème manuel.","Données sur les agrégats monétaires de la zone euro.","Données sur les agrégats monétaires en France.","Collecte épargne réglementée","Données détaillées sur les crédits et dépôts régionaux.","Comptes financiers au niveau national.","Comptes financiers - Statinfo au niveau national.","Enquêtes sur l'état des affaires au niveau national.","Enquêtes sur l'état des affaires au niveau régional.","Données sur la détention de titres financiers.","Données sur la détention d'actifs financiers par les non-résidents.","Observations et analyses sur les entreprises en France.","Informations sur les titres de dette émis et détenus.","Comptes détaillant la distribution du patrimoine des ménages français.","Données économiques et financières globales (Séries clones).","Taux d'intérêt à court terme dans la zone euro.","Taux de change des devises principales.","Données sur la présence internationale des groupes français.","Données sur les taux et les conditions du marché financier.","Statistiques trimestrielles sur les flux d'investissements directs.","Informations sur les actifs et passifs des compagnies d'assurance.","Données sur l'inflation et l'évolution des prix.","Suivi de la mise en œuvre des différents dispositifs d’inclusion financière","Informations sur les fonds d'investissement non monétaires.","Données sur les taux d'intérêt dans la zone euro.","Données sur les taux d'intérêt en France.","Séries des sociétés financières autres que les institutions monétaires et financières (IMF) issues des comptes nationaux financiers, conformément à la norme statistique SDDS Plus du Fonds monétaire international (FMI).","Données sur les plans d'épargne en actions destinés aux PME.","Informations sur les crédits accordés aux petites et moyennes entreprises.","Comptes financiers trimestriels pour le secteur public.","Données sur les réserves de change du pays.","Informations sur les prix de l'immobilier résidentiel et commercial.","Séries d’encours à l’actif et au passif par secteur issues des comptes nationaux financiers, conformément à la norme statistique SDDS Plus du Fonds monétaire international (FMI).","Données sur l'accès des petites et moyennes entreprises au financement.","Emission et détention de titres - France.","Stat Info Anticipation d'Inflation.","Coûts salariaux, Emploi, Chômage.","Le marché des Titres de Créances Négociables (version 3)."],[2550,159,329,3758,2728,2267,175,2310,3719,259,1792,4835,91,4,2230,51,563,35,9,101,555,52,36,272,6954,291,168,139,357,13,52,9,352,318,7,182,4,158,8,168,496]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>dataset_id<\/th>\n      <th>model_id<\/th>\n      <th>description_fr<\/th>\n      <th>series_count<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":4},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"dataset_id","targets":1},{"name":"model_id","targets":2},{"name":"description_fr","targets":3},{"name":"series_count","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="section level3">
+<h3 id="obtenir-des-infos-sur-un-dataset">Obtenir des infos sur un dataset<a class="anchor" aria-label="anchor" href="#obtenir-des-infos-sur-un-dataset"></a>
+</h3>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">bdfseriesofc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/apimisc/man/bdf_list_datasets.html" class="external-link">bdf_list_datasets</a></span><span class="op">(</span>dataset <span class="op">=</span> <span class="st">"OFC"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">bdfseriesofc</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="fu">tidyselect</span><span class="fu">::</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/all_of.html" class="external-link">any_of</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>            <span class="st">"series_key"</span>,</span>
+<span>            <span class="st">"title_fr"</span>,</span>
+<span>            <span class="st">"first_time_period_date"</span>,</span>
+<span>            <span class="st">"last_time_period_date"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">DT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/DT/man/datatable.html" class="external-link">datatable</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-e5c8c404fe174e4c81bd" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e5c8c404fe174e4c81bd">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13"],["OFC.Q.N.FR.W1.S12M.S1.N.A.LE.F._Z._Z.XDC._T.S.V.N._T","OFC.Q.N.FR.W2.S12M.S13.N.A.LE.F._Z._Z.XDC._T.S.V.N._T","OFC.Q.N.FR.W2.S12M.S12K.N.L.LE.F._Z._Z.XDC._T.S.V.N._T","OFC.Q.N.FR.W2.S12M.S1V.N.L.LE.F._Z._Z.XDC._T.S.V.N._T","OFC.Q.N.FR.W2.S12M.S13.N.L.LE.F._Z._Z.XDC._T.S.V.N._T","OFC.Q.N.FR.W2.S12M.S12K.N.A.LE.F._Z._Z.XDC._T.S.V.N._T","OFC.Q.N.FR.W2.S12M.S12M.N.NE.LE.F._Z._Z.XDC._T.S.V.N._T","OFC.Q.N.FR.W2.S12M.S1V.N.A.LE.F._Z._Z.XDC._T.S.V.N._T","OFC.Q.N.FR.W1.S12M.S1.N.L.LE.F._Z._Z.XDC._T.S.V.N._T","OFC.Q.N.FR.W2.S12M.S1.N.N.LE.F._Z._Z.XDC._T.S.V.N._T","OFC.Q.N.FR.W0.S12M.S1.N.L.LE.F5._Z._Z.XDC._T.S.V.N._T","OFC.Q.N.FR.W2.S12M.S13.N.N.LE.F._Z._Z.XDC._T.S.V.N._T","OFC.Q.N.FR.W1.S12M.S1.N.N.LE.F._Z._Z.XDC._T.S.V.N._T"],["Actif vis-à-vis du reste du monde","Actif vis-à-vis des administrations publiques (APU)","Passif vis-à-vis des institutions financières monétaires (IFM)","Autres passifs  vis-à-vis des sociétés non financières et des ménages et institutions financières au but non lucratif au service des ménages (hors autres passifs nets)","Passif vis-à-vis des administrations publiques (APU)","actif vis-à-vis des institutions financières monétaires (IFM)","Autres passifs nets","Actif vis-à-vis des sociétés non financières et des ménages et institutions financières au but non lucratif au service des ménages","Passif vis-à-vis du reste du monde","Actif net vis-à-vis de l'économie nationale","Actions et autres titres de propriété, actifs","Actif net vis-à-vis des administrations publiques (APU)","Actif net vis-à-vis du reste du monde"],["1995-12-31","1995-12-31","1995-12-31","1995-12-31","1995-12-31","1995-12-31","1995-12-31","1995-12-31","1995-12-31","1995-12-31","1995-12-31","1995-12-31","1995-12-31"],["2025-03-31","2025-03-31","2025-03-31","2025-03-31","2025-03-31","2025-03-31","2025-03-31","2025-03-31","2025-03-31","2025-03-31","2025-03-31","2025-03-31","2025-03-31"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>series_key<\/th>\n      <th>title_fr<\/th>\n      <th>first_time_period_date<\/th>\n      <th>last_time_period_date<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"series_key","targets":1},{"name":"title_fr","targets":2},{"name":"first_time_period_date","targets":3},{"name":"last_time_period_date","targets":4}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="section level3">
+<h3 id="télécharger-une-série">Télécharger une série<a class="anchor" aria-label="anchor" href="#t%C3%A9l%C3%A9charger-une-s%C3%A9rie"></a>
+</h3>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">livretA</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/apimisc/man/bdf_get_serie.html" class="external-link">bdf_get_serie</a></span><span class="op">(</span>key <span class="op">=</span> <span class="st">"MIR1.M.FR.B.L23FRLA.D.R.A.2230U6.EUR.O"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">livretA</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="fu">tidyselect</span><span class="fu">::</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/all_of.html" class="external-link">any_of</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>            <span class="st">"dataset_id"</span>,</span>
+<span>            <span class="st">"title_fr"</span>,</span>
+<span>            <span class="st">"time_period"</span>,</span>
+<span>            <span class="st">"time_period_start"</span>,</span>
+<span>            <span class="st">"time_period_end"</span>,</span>
+<span>            <span class="st">"obs_value"</span>,</span>
+<span>            <span class="st">"obs_status"</span>,</span>
+<span>            <span class="st">"source_agency"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span>
+<span>        time_period_start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="va">time_period_start</span>, format <span class="op">=</span> <span class="st">"%Y-%m-%d"</span><span class="op">)</span>,</span>
+<span>        time_period_end <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="va">time_period_end</span>, format <span class="op">=</span> <span class="st">"%Y-%m-%d"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html" class="external-link">arrange</a></span><span class="op">(</span><span class="fu">desc</span><span class="op">(</span><span class="va">time_period_end</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">DT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/DT/man/datatable.html" class="external-link">datatable</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-36aa3d2a04d42bbc2145" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-36aa3d2a04d42bbc2145">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6"],["MIR1","MIR1","MIR1","MIR1","MIR1","MIR1"],["Taux du Livret A","Taux du Livret A","Taux du Livret A","Taux du Livret A","Taux du Livret A","Taux du Livret A"],["2025-09","2025-08","2025-07","2025-06","2025-05","2025-04"],["2025-09-01","2025-08-01","2025-07-01","2025-06-01","2025-05-01","2025-04-01"],["2025-09-30","2025-08-31","2025-07-31","2025-06-30","2025-05-31","2025-04-30"],[1.7,1.7,2.4,2.4,2.4,2.4],["A","A","A","A","A","A"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>dataset_id<\/th>\n      <th>title_fr<\/th>\n      <th>time_period<\/th>\n      <th>time_period_start<\/th>\n      <th>time_period_end<\/th>\n      <th>obs_value<\/th>\n      <th>obs_status<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":6},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"dataset_id","targets":1},{"name":"title_fr","targets":2},{"name":"time_period","targets":3},{"name":"time_period_start","targets":4},{"name":"time_period_end","targets":5},{"name":"obs_value","targets":6},{"name":"obs_status","targets":7}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="section level3">
+<h3 id="utiliser-une-série">Utiliser une série<a class="anchor" aria-label="anchor" href="#utiliser-une-s%C3%A9rie"></a>
+</h3>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://ggplot2.tidyverse.org" class="external-link">"ggplot2"</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">livretA</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span>
+<span>        time_period_start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="va">time_period_start</span>, format <span class="op">=</span> <span class="st">"%Y-%m-%d"</span><span class="op">)</span>,</span>
+<span>        time_period_end <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="va">time_period_end</span>, format <span class="op">=</span> <span class="st">"%Y-%m-%d"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>    <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">time_period_start</span>, y <span class="op">=</span> <span class="va">obs_value</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span></span>
+<span>            limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">9</span><span class="op">)</span>,</span>
+<span>            expand <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/expansion.html" class="external-link">expansion</a></span><span class="op">(</span>mult <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0.05</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
+<span>            title <span class="op">=</span> <span class="st">"Evolution du taux du livret A"</span>,</span>
+<span>            subtitle <span class="op">=</span> <span class="st">"en %"</span>,</span>
+<span>            caption <span class="op">=</span> <span class="st">"Source : Banque de France"</span>,</span>
+<span>            x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="st">""</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span></span>
+<span>        axis.line.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_line</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span>,</span>
+<span>        axis.line.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_line</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span>,</span>
+<span>        plot.caption <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>hjust <span class="op">=</span> <span class="fl">0</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p><img src="banque_de_france_files/figure-html/unnamed-chunk-6-1.png" width="70%" style="display: block; margin: auto;"></p>
+</div>
 </div>
   </div>
 
