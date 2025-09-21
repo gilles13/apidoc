@@ -1,0 +1,30 @@
+---
+title: "worldbank"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{worldbank}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+	echo = FALSE,
+	fig.align="center",
+	fig.show="hold",
+  comment = "#>"
+)
+```
+
+```{r, out.width="50%"}
+knitr::include_graphics(path = "../man/img/logo_world_bank.png")
+```
+
+## Compte utilisateur
+
+Pas nécessaire
+
+## *Package* `R`
+
+TODO

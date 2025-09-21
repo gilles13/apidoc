@@ -1,0 +1,33 @@
+---
+title: "insee"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{insee}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+	echo = FALSE,
+	fig.align="center",
+	fig.show="hold",
+  comment = "#>"
+)
+```
+
+```{r, out.width="50%"}
+knitr::include_graphics(path = "../man/img/logo_insee_2025.png")
+```
+
+## Compte utilisateur
+
+Avant d'utiliser le *package* `apisirene`, vous devez créer un compte
+[portail des api de l'Insee](https://portail-api.insee.fr/){target="_blank"}
+
+Toute la procédure est documentée sur [https://www.sirene.fr/static-resources/documentation/Insee_API_publique_modalites_connexion.pdf](https://www.sirene.fr/static-resources/documentation/Insee_API_publique_modalites_connexion.pdf){target="_blank"}
+
+## Utilisation
+
+TODO

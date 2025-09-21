@@ -1,0 +1,31 @@
+---
+title: "inpi"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{inpi}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+	echo = FALSE,
+	fig.align="center",
+	fig.show="hold",
+  comment = "#>"
+)
+```
+
+```{r, out.width="50%"}
+knitr::include_graphics(path = "../man/img/logo_inpi.png")
+```
+
+## Compte utilisateur
+
+Avant d'utiliser le *package* `apiinpirne`, vous devez créer un compte
+[Inpi Connect](https://data.inpi.fr/register){target="_blank"}
+
+## Utilisation
+
+TODO

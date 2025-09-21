@@ -1,0 +1,25 @@
+---
+title: "introduction"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+	echo = FALSE,
+	fig.align="center",
+  comment = "#>"
+)
+```
+
+```{r, out.width="50%"}
+knitr::include_graphics(path = "../man/img/logo_apidoc_center.png")
+```
+
+*Package* documentaire
+
+Voir les vignettes

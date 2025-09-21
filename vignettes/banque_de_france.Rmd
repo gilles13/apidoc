@@ -1,0 +1,31 @@
+---
+title: "banque_de_france"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{banque_de_france}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+	echo = FALSE,
+	fig.align="center",
+	fig.show="hold",
+  comment = "#>"
+)
+```
+
+```{r, out.width="30%"}
+knitr::include_graphics(path = "../man/img/logo_banque_de_france_2022.png")
+```
+
+## Compte utilisateur
+
+Avant d'utiliser de requêter l'API Banque de France, vous devez créer un compte
+[webstat](https://webstat.banque-france.fr/fr/pages/guide-migration-api/){target="_blank"}
+
+## *Package* `R`
+
+TODO

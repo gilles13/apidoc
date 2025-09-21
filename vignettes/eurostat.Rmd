@@ -1,0 +1,30 @@
+---
+title: "eurostat"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{eurostat}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+	echo = FALSE,
+	fig.align="center",
+	fig.show="hold",
+  comment = "#>"
+)
+```
+
+```{r, out.width="50%"}
+knitr::include_graphics(path = "../man/img/logo_eurostat.png")
+```
+
+## Compte utilisateur
+
+Pas nécessaire
+
+## *Package* `R`
+
+voir [eurostat](https://cran.r-project.org/web/packages/eurostat/vignettes/vignette.html){target="_blank"}

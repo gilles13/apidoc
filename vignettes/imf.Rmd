@@ -1,0 +1,30 @@
+---
+title: "imf"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{imf}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+	echo = FALSE,
+	fig.align="center",
+	fig.show="hold",
+  comment = "#>"
+)
+```
+
+```{r, out.width="30%"}
+knitr::include_graphics(path = "../man/img/logo_imf.png")
+```
+
+## Compte utilisateur
+
+Pas nécessaire
+
+## *Package* `R`
+
+TODO
