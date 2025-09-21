@@ -17,14 +17,28 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r, out.width="30%"}
+```{r, out.width="20%"}
 knitr::include_graphics(path = "../man/figures/logo_imf.png")
 ```
 
 ## Compte utilisateur
 
-Pas nécessaire
+Non requis
 
 ## *Package* `R`
 
-TODO
+Le *package* apimisc permet de récupérer quelques informations de l'API IMF.
+
+## Exemples
+
+### Liste des séries et datasets
+
+```{r, echo = TRUE}
+library("apimisc")
+
+imfdtinfo <- imf_get_dataset_info()
+
+imfdtinfo |>
+	DT::datatable(escape = FALSE)
+```
+
