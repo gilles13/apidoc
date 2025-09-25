@@ -10,21 +10,92 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-	echo = FALSE,
+	echo = TRUE,
 	fig.align="center",
 	fig.show="hold",
   comment = "#>"
 )
 ```
 
-```{r, out.width="30%"}
+```{r, out.width="30%", echo = FALSE}
 knitr::include_graphics(path = "../man/figures/logo_eurostat.png")
 ```
 
 ## Compte utilisateur
 
-Pas nécessaire
+Non requis
 
 ## *Package* `R`
 
-voir [eurostat](https://cran.r-project.org/web/packages/eurostat/vignettes/vignette.html){target="_blank"}
++ [`eurostat`](https://ropengov.github.io/eurostat/articles/eurostat_tutorial.html){target="_blank"}
+
++ [`giscoR`](https://ropengov.github.io/giscoR/){target="_blank"}
+
++ [`restat`](https://eurostat.github.io/restatapi/){target="_blank"}
+
+## Exemples
+
+### Lister les jeux de données
+
+```{r}
+library("eurostat")
+
+tocestat <- eurostat::get_eurostat_toc(lang = "fr")
+
+tocestat |> 
+	DT::datatable()
+```
+
+### Chercher des données par thème
+
+```{r}
+entdataset <- 
+	eurostat::search_eurostat(pattern = "entreprises",
+														column = "title",
+														lang = "fr")
+
+entdataset |> 
+	DT::datatable()
+```
+
+
+### Télécharger des données
+
+```{r}
+demoentr <- 
+	eurostat::get_eurostat(
+			"bd_size",
+			filters = list(geo = c("EU27_2020", "FR", "IT", "DE", "ES"),
+										 indic_sbs = "ENT_NR",
+										 nace_r2 = "C",
+										 sizeclas = "TOTAL"),
+			time_period = "2021",
+			time_format = "date")
+
+demoentrlab <- 
+	demoentr |> 
+	eurostat::label_eurostat(lang = "fr")
+
+demoentrlab |> 
+	DT::datatable()
+
+```
+
+### Tracer
+
+```{r}
+library("ggplot2")
+
+demoentr |> 
+	dplyr::filter(time == "2021-01-01",
+								age == "TOTAL",
+								geo != "EU27_2020") |> 
+	ggplot(aes(x = time, y = values, fill = geo)) +
+	geom_bar(stat = "identity", position = "dodge") +
+	labs(x = "", y = "",
+			 caption = "Source : Eurostat, base bd_size",
+			 title = "Nb d'entreprise nace_r2 = C (Manufacturing) par pays, en 2021") +
+	theme_minimal()
+	
+```
+

@@ -10,21 +10,29 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-	echo = FALSE,
+	echo = TRUE,
 	fig.align="center",
 	fig.show="hold",
   comment = "#>"
 )
 ```
 
-```{r, out.width="50%"}
+```{r, out.width="50%", echo = FALSE}
 knitr::include_graphics(path = "../man/figures/logo_world_bank.png")
 ```
 
 ## Compte utilisateur
 
-Pas nécessaire
+Non requis
 
 ## *Package* `R`
+
++ [`worldbank`](https://m-muecke.github.io/worldbank/)
+
++ [`WDI`](https://vincentarelbundock.github.io/WDI/)
+
++ [`wbstats`](https://gshs-ornl.github.io/wbstats/)
+
+## Exemples
 
 TODO
