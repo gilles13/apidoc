@@ -2,7 +2,7 @@
 title: "sdmx"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{banque_de_france}
+  %\VignetteIndexEntry{sdmx}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

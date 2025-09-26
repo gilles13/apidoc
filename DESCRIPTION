@@ -12,7 +12,12 @@ Language: fr
 Depends: 
     R (>= 4.1)
 Imports: 
+    apimisc,
     dplyr (>= 0.8),
+    DT,
+    eurostat,
+    flexdashboard,
+    ggplot2,
     httr2,
     purrr,
     tibble,
