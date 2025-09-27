@@ -23,11 +23,27 @@ knitr::include_graphics(path = "../man/figures/logo_insee_2025.png")
 
 ## Compte utilisateur
 
-Avant d'utiliser le *package* `apisirene`, vous devez créer un compte
+Afin d'utiliser toutes les API de l'Insee, vous devez créer un compte sur le
 [portail des api de l'Insee](https://portail-api.insee.fr/){target="_blank"}
 
 Toute la procédure est documentée sur [https://www.sirene.fr/static-resources/documentation/Insee_API_publique_modalites_connexion.pdf](https://www.sirene.fr/static-resources/documentation/Insee_API_publique_modalites_connexion.pdf){target="_blank"}
 
-## Utilisation
+## Écosystème
 
-TODO
+Il existe plusieurs *packages* pour utiliser les données ouvertes de l'Insee.
+
+La documentation est disponible dans leurs vignettes respectives.
+
+## Voir aussi
+
++ [insee](https://pyr-opendatafr.github.io/R-Insee-Data/index.html){target="_blank"}
+
++ [doremifasol](https://inseefrlab.github.io/DoReMIFaSol/index.html){target="_blank"}
+
++ [melodi](https://inseefrlab.github.io/melodi/){target="_blank"}
+
++ [rsdmx](https://github.com/eblondel/rsdmx){target="_blank"}
+
+
+
+

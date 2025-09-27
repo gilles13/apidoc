@@ -37,7 +37,7 @@ Non requis
 
 ### Lister les jeux de données
 
-```{r}
+```{r, eval = FALSE}
 library("eurostat")
 
 tocestat <- eurostat::get_eurostat_toc(lang = "fr")
@@ -48,7 +48,7 @@ tocestat |>
 
 ### Chercher des données par thème
 
-```{r}
+```{r, eval = FALSE}
 entdataset <- 
 	eurostat::search_eurostat(pattern = "entreprises",
 														column = "title",
@@ -61,7 +61,7 @@ entdataset |>
 
 ### Télécharger des données
 
-```{r}
+```{r, eval = FALSE}
 demoentr <- 
 	eurostat::get_eurostat(
 			"bd_size",
@@ -83,7 +83,7 @@ demoentrlab |>
 
 ### Tracer
 
-```{r}
+```{r, eval = FALSE}
 library("ggplot2")
 
 demoentr |> 

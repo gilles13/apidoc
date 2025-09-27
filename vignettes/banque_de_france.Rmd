@@ -28,7 +28,7 @@ Avant de requêter l'API Banque de France, vous devez créer un compte
 
 ## Paramétrage
 
-Afin d'utiliser le *package* `apimisc`, il faut configurer une variable d'environnement `WEBSTAT_APIKEY` avec la valeur du jeton configuré sur Webstat.
+Afin d'utiliser le *package* `apimisc`, il faut configurer une variable d'environnement `WEBSTAT_APIKEY` avec la valeur d'un jeton, à récupérer sur Webstat.
 
 ## *Package* R
 

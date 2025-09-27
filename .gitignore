@@ -1,3 +1,6 @@
+.Rhistory
+.RData
+.Rprofile
 inst/doc
 /doc/
 /Meta/
