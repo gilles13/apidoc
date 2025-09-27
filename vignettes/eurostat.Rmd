@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r, out.width="30%", echo = FALSE}
+```{r, out.width="20%", echo = FALSE}
 knitr::include_graphics(path = "../man/figures/logo_eurostat.png")
 ```
 
@@ -25,7 +25,7 @@ knitr::include_graphics(path = "../man/figures/logo_eurostat.png")
 
 Non requis
 
-## *Package* `R`
+## *Packages* `R`
 
 + [`eurostat`](https://ropengov.github.io/eurostat/articles/eurostat_tutorial.html){target="_blank"}
 
@@ -46,6 +46,12 @@ tocestat |>
 	DT::datatable()
 ```
 
+```{r, echo = FALSE}
+library("apidoc")
+tocestatfr20250927 |> 
+	DT::datatable()
+```
+
 ### Chercher des données par thème
 
 ```{r, eval = FALSE}
@@ -58,10 +64,9 @@ entdataset |>
 	DT::datatable()
 ```
 
-
 ### Télécharger des données
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 demoentr <- 
 	eurostat::get_eurostat(
 			"bd_size",
@@ -83,7 +88,7 @@ demoentrlab |>
 
 ### Tracer
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 library("ggplot2")
 
 demoentr |> 

@@ -22,4 +22,14 @@ knitr::include_graphics(path = "../man/figures/logo_apidoc_center.png")
 
 Le *package* `apidoc` documente l'accès aux API de certains producteurs de données.
 
+![](../man/figures/logo_banque_de_france_2022.png){width="20%"}
+![](../man/figures/logo_eurostat.png){width="21%"}
+
+![](../man/figures/logo_imf.png){width="20%"}
+![](../man/figures/logo_ecb.jpg){width="20%"}
+
+```{r, out.width="20%", eval = FALSE}
+knitr::include_graphics(path = "../man/figures/logo_imf.png")
+```
+
 Voir les infos dans les vignettes ou la rubrique `Articles`
