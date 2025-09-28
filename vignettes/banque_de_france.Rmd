@@ -28,9 +28,9 @@ Avant de requêter l'API Banque de France, vous devez créer un compte
 
 ## Paramétrage
 
-Afin d'utiliser le *package* `apimisc`, il faut configurer une variable d'environnement `WEBSTAT_APIKEY` avec la valeur d'un jeton, à récupérer sur Webstat.
+Pour utiliser le *package* `apimisc`, il faut configurer une variable d'environnement `WEBSTAT_APIKEY` avec la valeur d'un jeton, à récupérer sur Webstat.
 
-## *Package* R
+## Utilisation
 
 Le *package* `apimisc` contient 3 fonctions pour utiliser l'API BDF :
 
@@ -120,6 +120,4 @@ livretA |>
 		axis.line.x = element_line(colour = "black"),
 		axis.line.y = element_line(colour = "black"),
 		plot.caption = element_text(hjust = 0))
-
 ```
-

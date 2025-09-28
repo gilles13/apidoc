@@ -4,6 +4,7 @@ pkgdown_sha: ~
 articles:
   apidoc: apidoc.html
   banque_de_france: banque_de_france.html
+  doc_api: doc_api.html
   eurostat: eurostat.html
   imf: imf.html
   inpi: inpi.html
@@ -11,7 +12,7 @@ articles:
   opendata: opendata.html
   sdmx: sdmx.html
   worldbank: worldbank.html
-last_built: 2025-09-27T17:45Z
+last_built: 2025-09-28T11:05Z
 urls:
   reference: https://github.com/gilles13/apidoc/reference
   article: https://github.com/gilles13/apidoc/articles

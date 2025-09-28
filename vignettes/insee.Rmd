@@ -34,7 +34,7 @@ Il existe plusieurs *packages* pour utiliser les données ouvertes de l'Insee.
 
 La documentation est disponible dans leurs vignettes respectives.
 
-## Voir aussi
+Voir notamment :
 
 + [insee](https://pyr-opendatafr.github.io/R-Insee-Data/index.html){target="_blank"}
 
@@ -44,6 +44,4 @@ La documentation est disponible dans leurs vignettes respectives.
 
 + [rsdmx](https://github.com/eblondel/rsdmx){target="_blank"}
 
-
-
-
++ [apisirene](https://gilles13.github.io/apisirene/){target="_blank"}

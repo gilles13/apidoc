@@ -25,6 +25,9 @@ Le *package* `apidoc` documente l'accès aux API de certains producteurs de donn
 ![](../man/figures/logo_banque_de_france_2022.png){width="20%"}
 ![](../man/figures/logo_eurostat.png){width="21%"}
 
+![](../man/figures/logo_world_bank.png){width="25%"}
+![](../man/figures/logo_ocde.png){width="20%"}
+
 ![](../man/figures/logo_imf.png){width="20%"}
 ![](../man/figures/logo_ecb.jpg){width="20%"}
 

@@ -1,0 +1,111 @@
+---
+title: "documentations"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{documentations}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+	echo = FALSE,
+	fig.align="left",
+  comment = "#>"
+)
+```
+
+Rassemble de la documentation sur les API de plusieurs producteurs.
+
+## Insee
+
++ [Portail des API de l'Insee](https://portail-api.insee.fr/)
+
++ [Sirene 3.11](https://portail-api.insee.fr/catalog/api/2ba0e549-5587-3ef1-9082-99cd865de66f/doc)
+
++ [Melodi 1.13.1](https://portail-api.insee.fr/catalog/api/a890b735-159c-4c91-90b7-35159c7c9126/doc)
+
++ [Rmès Metadata API 3.9.2](https://portail-api.insee.fr/catalog/api/5029cf12-e930-4d24-a9cf-12e9307d241d/doc)
+
++ [Séries chronologiques 1.0](https://portail-api.insee.fr/catalog/api/eebab65a-9aef-4da5-bab6-5a9aefeda552/doc)
+
++ [Données locales 1.2 - DEPRECATED](https://portail-api.insee.fr/catalog/api/3d577cf9-d081-4054-977c-f9d081b054b2/doc)
+
+## Inpi
+
++ [API Entreprises](https://data.inpi.fr/content/editorial/Acces_API_Entreprises)
+
++ [API Propriété industrielle *swagger*](https://data.inpi.fr/content/editorial/swagger-pi)
+
++ [API Propriété industrielle DOC](https://data.inpi.fr/content/editorial/apis_pi)
+
+## IMF
+
++ [API pages](https://data.imf.org/en/Resource-Pages/IMF-API)
+
++ [DataMapper](https://www.imf.org/external/datamapper/api/help)
+
++ [BD Economics](https://www.bd-econ.com/imfapi1.html)
+
+## Banque de France
+
++ [Webstat](https://webstat.banque-france.fr/fr/pages/guide-migration-api/)
+
++ [Webstat inscription](https://webstat.banque-france.fr/signup)
+
++ [Webstat console](https://webstat.banque-france.fr/explore/?sort=modified)
+
++ [Webstat *swagger*](https://webstat.banque-france.fr/api/explore/v2.1/console)
+
++ [REGAFI](https://developer.regafi.banque-france.fr/)
+
++ [REGAFI inscription](https://developer.regafi.banque-france.fr/user/register)
+
+## OECD
+
++ [API intro fr](https://www.oecd.org/fr/data/insights/data-explainers/2024/09/api.html)
+
++ [Doc](https://gitlab.algobank.oecd.org/public-documentation/dotstat-migration/-/raw/main/OECD_Data_API_documentation.pdf)
+
++ [FAQ](https://www.oecd.org/en/data/insights/data-explainers/2024/09/OECD-DE-FAQ.html)
+
++ [Bonnes pratiques](https://www.oecd.org/fr/data/insights/data-explainers/2024/11/Api-best-practices-and-recommendations.html)
+
++ [Data explorer](https://data-explorer.oecd.org/)
+
++ [Upgrading Legacy StatApi](https://gitlab.algobank.oecd.org/public-documentation/dotstat-migration/-/raw/main/OECD_Data_API_documentation-Upgrading_from_the_legacy_OECD.Stat_APIs.pdf)
+
+## World Bank
+
++ [Doc & report API](https://documents.worldbank.org/en/publication/documents-reports/api)
+
++ [Doc & report for dev](https://documents.worldbank.org/en/publication/documents-reports/developers)
+
++ [Doc & report dev inf](https://datahelpdesk.worldbank.org/knowledgebase/topics/125589-developer-information)
+
++ [Data360 API](https://data360.worldbank.org/en/api)
+
+## data.gouv.fr
+
++ [PF](https://www.data.gouv.fr/)
+
++ [DOC API DATAGOUV](https://guides.data.gouv.fr/guide-data.gouv.fr/readme-1/reference)
+
+## Autres
+
++ [Cheat sheet](https://sis-cc.gitlab.io/dotstatsuite-documentation/using-api/restful/)
+
++ [insee](https://pyr-opendatafr.github.io/R-Insee-Data/index.html)
+
++ [doremifasol](https://inseefrlab.github.io/DoReMIFaSol/index.html)
+
++ [melodi](https://inseefrlab.github.io/melodi/)
+
++ [rsdmx](https://github.com/eblondel/rsdmx)
+
++ [experso : Eric Persson](https://github.com/expersso)
+
++ [tidy intelligence : Christoph Scheuch](https://github.com/tidy-intelligence)
+
+
