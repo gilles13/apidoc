@@ -40,6 +40,16 @@ Rassemble de la documentation sur les API de plusieurs producteurs.
 
 + [API Propriété industrielle DOC](https://data.inpi.fr/content/editorial/apis_pi)
 
+## Eurostat
+
++ [ESCO : european skills, competence, qualifications & occupations](https://ec.europa.eu/esco/api/doc/esco_api_doc.html#api-_)
+
++ [Eurostat](https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-getting-started)
+
++ [API introduction](https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-introduction)
+
++ [Web services](https://ec.europa.eu/eurostat/data/web-services)
+
 ## IMF
 
 + [API pages](https://data.imf.org/en/Resource-Pages/IMF-API)

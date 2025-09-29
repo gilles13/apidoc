@@ -34,11 +34,11 @@ Pour utiliser le *package* `apimisc`, il faut configurer une variable d'environn
 
 Le *package* `apimisc` contient 3 fonctions pour utiliser l'API BDF :
 
-+ bdf_get_catalog() pour lister les catalogues disponibles sur l'API ;
++ bdf_get_catalog() pour lister les catalogues ;
 
-+ bdf_list_datasets() pour lister les datasets ;
++ bdf_list_datasets() pour interroger un dataset ;
 
-+ bdf_get_serie() pour récupérer une série.
++ bdf_get_serie() pour télécharger une série.
 
 ## Exemples
 

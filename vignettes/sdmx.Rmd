@@ -47,6 +47,8 @@ Il existe plusieurs *packages* `R` pour utiliser de données sdmx :
 
 3. [RJSDMX](https://cran.r-project.org/web/packages/RJSDMX/index.html)
 
+4. [sdmxdata](https://edwindj.github.io/sdmxdata/)
+
 ## Exemples
 
 TODO
