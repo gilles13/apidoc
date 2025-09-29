@@ -1,0 +1,44 @@
+---
+title: "oecd"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{oecd}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+	echo = FALSE,
+	fig.align="center",
+	fig.show="hold",
+  comment = "#>"
+)
+```
+
+```{r, out.width="20%"}
+knitr::include_graphics(path = "../man/figures/logo_oecd.png")
+```
+
+## Compte utilisateur
+
+Non requis
+
+## *Package* `R`
+
+Le *package* apimisc permet de récupérer quelques informations de l'API OCDE.
+
+## Exemples
+
+### Liste des catalogues
+
+```{r, echo = TRUE}
+library("apimisc")
+
+ocdecat <- oecd_get_catalog()
+
+ocdecat |>
+	DT::datatable(escape = FALSE)
+```
+
