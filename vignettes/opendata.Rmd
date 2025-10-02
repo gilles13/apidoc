@@ -207,6 +207,7 @@ tuto data.gouv;https://tube.numerique.gouv.fr/w/9rvhdGpXmsPpCJa5CRwDZr
 open data maturity index 2024;https://data.europa.eu/en/open-data-maturity/2024
 open data maturity index 2021;https://www.etalab.gouv.fr/retour-sur-lopen-data-maturity-index-2021-mesure-de-limpact-de-louverture-des-donnees-2-4/
 base de données;https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006278879
+big data / opendata;https://chataignon.com/opendata.html
 ")
 
 dflink |> 
